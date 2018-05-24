@@ -33,15 +33,6 @@ namespace D2Blog.Controllers
             {
                 return HttpNotFound();
             }
-            if (Id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            BlogPost blogPost = db.Posts.Find(Id);
-            if (blogPost == null)
-            {
-                return HttpNotFound();
-            }
             return View(blogPost);
         }
 

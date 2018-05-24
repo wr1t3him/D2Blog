@@ -24,9 +24,14 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Blog", "Index", "BlogPosts")</li>
+
                     <li>@Html.ActionLink("Comment", "Index", "Comments")</li>
-                   <li>@Html.ActionLink("Details", "Details", new { slug = item.Slug })</li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Blog", "Index", "BlogPosts")</li>
+                        <li>@Html.ActionLink("Comment", "Index", "Comments")</li>
+                    }
+                    
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
