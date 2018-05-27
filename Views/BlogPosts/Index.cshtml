@@ -5,10 +5,11 @@
 }
 
 <h2>Index</h2>
-
-<p>
+@*Want to authenticate whether user is an admin to access create post feature*@
+@if(User.IsInRole("Admin"))
+{
     @Html.ActionLink("Create New", "Create")
-</p>
+}
 <table class="table">
     <tr>
         <th>
@@ -35,35 +36,40 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Created)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Updated)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Slug)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Body)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.mediaURL)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.published)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Created)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Updated)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Slug)
+            </td>
+            <td>
+                @Html.Raw(item.Body)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mediaURL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.published)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { Slug = item.Slug })
+                @if((User.Identity.IsAuthenticated) && (User.IsInRole("Admin") || (User.IsInRole("Moderator"))))
+                {
+                @Html.ActionLink("Edit", "Edit", new { id = item.id })
+
+                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                }
+            </td>
+        </tr>
+    }
 
 </table>

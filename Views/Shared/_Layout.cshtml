@@ -6,6 +6,8 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link rel="icon" href="~/Spectre_status.jpg" type="image/jpg" sizes="16x16">
+
 
 </head>
 <body>
@@ -21,16 +23,13 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-
-                    <li>@Html.ActionLink("Comment", "Index", "Comments")</li>
+                    <li>@Html.ActionLink("Wilten's Blog", "Index", "BlogPosts")</li>
                     @if (User.Identity.IsAuthenticated)
-                    {
+                        {
+                        
                         <li>@Html.ActionLink("Blog", "Index", "BlogPosts")</li>
                         <li>@Html.ActionLink("Comment", "Index", "Comments")</li>
-                    }
+                        }
                     
                 </ul>
                 @Html.Partial("_LoginPartial")

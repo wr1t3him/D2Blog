@@ -37,6 +37,8 @@ namespace D2Blog.Controllers
         }
 
         // GET: BlogPosts/Create
+        [HttpGet]
+        [Authorize(Roles ="Admin")]
         public ActionResult Create()
         {
             return View();
@@ -47,7 +49,7 @@ namespace D2Blog.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,Body,mediaURL,published")] BlogPost blogPost)
+        public ActionResult Create([Bind(Include = "Title,Body,mediaURL,published")] BlogPost blogPost)
         {
             if (ModelState.IsValid)
             {
@@ -94,6 +96,9 @@ namespace D2Blog.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "id,Created,Updated,Title,Slug,Body,mediaURL,published")] BlogPost blogPost)
         {
+            //checks for new title to place in Slug
+            var slug = StringUtilities.URLFriendly(blogPost.Title);
+
             if (ModelState.IsValid)
             {
                 db.Entry(blogPost).State = EntityState.Modified;

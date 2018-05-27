@@ -24,15 +24,26 @@ namespace D2Blog.Migrations
             var RoleManager = new RoleManager<IdentityRole>(
                 new RoleStore<IdentityRole>(context));
 
-            if(!context.Roles.Any(r => r.Name == "Admin"))
+            var Moderator = new RoleManager<IdentityRole>(
+                new RoleStore<IdentityRole>(context));
+
+            if (!context.Roles.Any(r => r.Name == "Admin"))
             {
                 RoleManager.Create(new IdentityRole { Name = "Admin" });
+            }
+
+            if (!context.Roles.Any(r => r.Name == "Moderator"))
+            {
+                RoleManager.Create(new IdentityRole { Name = "Moderator" });
             }
 
             var userManager = new UserManager<ApplicationUser>(
                 new UserStore<ApplicationUser>(context));
 
-            if(!context.Users.Any(u => u.Email == "wr1t3him@gmail.com"))
+            var userModerator = new UserManager<ApplicationUser>(
+                new UserStore<ApplicationUser>(context));
+
+            if (!context.Users.Any(u => u.Email == "wr1t3him@gmail.com"))
             {
                 userManager.Create(new ApplicationUser
                 {
@@ -46,6 +57,21 @@ namespace D2Blog.Migrations
                 var userID = userManager.FindByEmail("wr1t3him@gmail.com").Id;
                 userManager.AddToRole(userID, "Admin");
             }
+       if (!context.Users.Any(u => u.Email == "ColeTrain@maillinator.com"))
+            {
+                userModerator.Create(new ApplicationUser
+                {
+                    UserName = "ColeTrain@maillinator.com",
+                    Email = "ColeTrain@maillinator.com",
+                    Firstname = "Tyrell",
+                    Lastname = "Coleman",
+                    Displayname = "Tyrell-CoalTrain-Coleman"
+                }, "Neji301!");
+
+                var userID = userManager.FindByEmail("ColeTrain@maillinator.com").Id;
+userManager.AddToRole(userID, "Moderator");
+            }
         }
     }
 }
+
