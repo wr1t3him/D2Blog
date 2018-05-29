@@ -3,9 +3,6 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
     <link rel="icon" href="~/Spectre_status.jpg" type="image/jpg" sizes="16x16">
     <meta charset="utf-8">
     <title>Wilten's Blog</title>
@@ -25,7 +22,10 @@
         <script src="modules/respond/html5-3.6-respond-1.1.0.min.js"></script>
     <![endif]-->
     <script src="~/Tales_template//code.jquery.com/jquery-2.2.3.min.js"></script>
-    <script>window.jQuery || document.write('<script src="node_modules/jquery/dist/jquery.min.js"><\/script>')</script>
+    <script>window.jQuery || document.write('<script src="~/Tales_template/node_modules/jquery/dist/jquery.min.js"><\/script>')</script>
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">

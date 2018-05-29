@@ -49,11 +49,12 @@ namespace D2Blog.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,PostId,AuthorId,Body,created,updated,UpdateReason")] Comment comment)
+        public ActionResult Create([Bind(Include = "id,PostId,AuthorId,Body")] Comment comment)
         {
             if (ModelState.IsValid)
             {
                 db.Comments.Add(comment);
+                comment.created = DateTimeOffset.Now;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
