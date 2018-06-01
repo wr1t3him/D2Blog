@@ -364,3 +364,7 @@ C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\obj\Debug\D2Blog.csproj.CoreC
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\obj\Debug\D2Blog.csproj.CopyComplete
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\obj\Debug\D2Blog.dll
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\obj\Debug\D2Blog.pdb
+C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\PagedList.dll
+C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\PagedList.Mvc.dll
+C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\PagedList.xml
+C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\PagedList.Mvc.xml

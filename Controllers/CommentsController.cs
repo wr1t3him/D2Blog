@@ -10,11 +10,13 @@ using D2Blog.Models;
 
 namespace D2Blog.Controllers
 {
+    [RequireHttps]
     public class CommentsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Comments
+        [RequireHttps]
         public ActionResult Index()
         {
             var comments = db.Comments.Include(c => c.Author).Include(c => c.Post);
@@ -22,6 +24,7 @@ namespace D2Blog.Controllers
         }
 
         // GET: Comments/Details/5
+        [RequireHttps]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -37,6 +40,7 @@ namespace D2Blog.Controllers
         }
 
         // GET: Comments/Create
+        [RequireHttps]
         public ActionResult Create()
         {
             ViewBag.AuthorId = new SelectList(db.Users, "Id", "Firstname");
@@ -47,6 +51,7 @@ namespace D2Blog.Controllers
         // POST: Comments/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [RequireHttps]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "id,PostId,AuthorId,Body")] Comment comment)
@@ -65,6 +70,7 @@ namespace D2Blog.Controllers
         }
 
         // GET: Comments/Edit/5
+        [RequireHttps]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -84,6 +90,7 @@ namespace D2Blog.Controllers
         // POST: Comments/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [RequireHttps]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "id,PostId,AuthorId,Body,created,updated,UpdateReason")] Comment comment)
@@ -100,6 +107,7 @@ namespace D2Blog.Controllers
         }
 
         // GET: Comments/Delete/5
+        [RequireHttps]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -115,6 +123,7 @@ namespace D2Blog.Controllers
         }
 
         // POST: Comments/Delete/5
+        [RequireHttps]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

@@ -54,9 +54,9 @@ namespace D2Blog
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "189189915062202",
+               appSecret: "c87639840b4d6a9e750b3daa61de713d");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
