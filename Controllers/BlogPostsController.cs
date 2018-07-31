@@ -106,7 +106,7 @@ namespace D2Blog.Controllers
                 if (ImageUploadValidator.IsWebFriendlyImage(image))
                 {
                     var fileName = Path.GetFileName(image.FileName);
-                    image.SaveAs(Path.Combine(Server.MapPath("~/Uploads/"), fileName));
+                    image.SaveAs(Path.Combine(Server.MapPath("~/Uploads/" + fileName)));
                     blogPost.mediaURL = "/Uploads/" + fileName;
                 }
                 blogPost.Slug = Slug;

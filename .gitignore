@@ -1,0 +1,4 @@
+*.config
+Identityconfig
+obj/Release/Package/PackageTmp/private.config
+*.config

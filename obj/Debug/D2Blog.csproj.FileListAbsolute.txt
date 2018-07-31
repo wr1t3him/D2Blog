@@ -242,6 +242,12 @@ C:\Users\Wilten\Desktop\Coder Foundry\D2Blog\D2Blog\obj\Debug\D2Blog.csproj.Core
 C:\Users\Wilten\Desktop\Coder Foundry\D2Blog\D2Blog\obj\Debug\D2Blog.csproj.CopyComplete
 C:\Users\Wilten\Desktop\Coder Foundry\D2Blog\D2Blog\obj\Debug\D2Blog.dll
 C:\Users\Wilten\Desktop\Coder Foundry\D2Blog\D2Blog\obj\Debug\D2Blog.pdb
+C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\roslyn\System.IO.Compression.dll
+C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\roslyn\VBCSCompiler.exe
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\ApplicationInsights.config
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\D2Blog.dll.config
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\D2Blog.dll
@@ -253,13 +259,9 @@ C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\roslyn\csi.exe
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\roslyn\csi.exe.config
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\roslyn\csi.rsp
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\roslyn\Microsoft.CodeAnalysis.dll
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\roslyn\Microsoft.VisualBasic.Core.targets
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\roslyn\Microsoft.Win32.Primitives.dll
@@ -269,7 +271,6 @@ C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\roslyn\System.Console.dll
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\roslyn\System.Diagnostics.Process.dll
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\roslyn\System.Diagnostics.StackTrace.dll
-C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\roslyn\System.IO.Compression.dll
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\roslyn\System.IO.FileSystem.dll
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\roslyn\System.IO.FileSystem.Primitives.dll
@@ -292,7 +293,6 @@ C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\roslyn\System.Xml.XPath.X
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\roslyn\vbc.exe
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\roslyn\vbc.exe.config
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\roslyn\vbc.rsp
-C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\roslyn\VBCSCompiler.exe
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\Antlr3.Runtime.dll
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\EntityFramework.dll
@@ -321,6 +321,8 @@ C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\Microsoft.Owin.Security.T
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\Newtonsoft.Json.dll
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\Owin.dll
+C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\PagedList.dll
+C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\PagedList.Mvc.dll
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\System.Diagnostics.DiagnosticSource.dll
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\System.Web.Helpers.dll
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\System.Web.Mvc.dll
@@ -330,6 +332,8 @@ C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\System.Web.WebPages.Deplo
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\System.Web.WebPages.dll
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\System.Web.WebPages.Razor.dll
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\WebGrease.dll
+C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\PagedList.xml
+C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\PagedList.Mvc.xml
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\System.Web.Helpers.xml
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\System.Web.Mvc.xml
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\System.Web.Optimization.xml
@@ -359,12 +363,7 @@ C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\Microsoft.AI.DependencyCo
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\Microsoft.AI.Web.xml
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\obj\Debug\D2Blog.csprojAssemblyReference.cache
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\obj\Debug\D2Blog.csproj.CoreCompileInputs.cache
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\obj\Debug\D2Blog.csproj.CopyComplete
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\obj\Debug\D2Blog.dll
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\obj\Debug\D2Blog.pdb
-C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\PagedList.dll
-C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\PagedList.Mvc.dll
-C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\PagedList.xml
-C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\PagedList.Mvc.xml

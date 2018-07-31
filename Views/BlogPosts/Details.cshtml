@@ -1,5 +1,6 @@
 ﻿@model D2Blog.Models.BlogPost
 
+
 @{
     ViewBag.Title = "Details";
 }
@@ -35,14 +36,6 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Slug)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Slug)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.Body)
         </dt>
 
@@ -55,8 +48,9 @@
         </dt>
 
         <dd>
-            if (Model.MediaURL != null) {
-            <img class="img-responsive" src="@Model.mediaURL" alt=""> }
+            @if (Model.mediaURL != null)
+            {
+                <img class="img-responsive" src="@Model.mediaURL" alt="" height="184" width="184">}
         </dd>
 
         <dt>
@@ -66,8 +60,19 @@
         <dd>
             @Html.DisplayFor(model => model.published)
         </dd>
-
+        
     </dl>
+</div>
+<div>
+    @using (Html.BeginForm("Create", "Comments"))
+    {
+        @Html.AntiForgeryToken()
+        <input type="text" class="col-md-3" id="comments" />
+        <input type="submit" value="Enter" />
+    }
+</div>
+<div>
+    @Html.ActionLink("Comment", "Index", "Comments")
 </div>
 <p>
     @if ((User.Identity.IsAuthenticated) && (User.IsInRole("Admin") || (User.IsInRole("Moderator"))))

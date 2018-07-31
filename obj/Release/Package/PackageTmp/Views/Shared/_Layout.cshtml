@@ -47,9 +47,11 @@
                     </a>
                 </div>
                 <nav class="pull-right tales-nav">
-                    <div class="collapse navbar-collapse">
+                    <li class="collapse navbar-collapse">
                         <ul class="nav nav-pills navbar-nav">
-
+                            <li>
+                                @Html.ActionLink("Home", "Index", "BlogPosts")
+                            </li>
                             <li class="dropdown active">
                                 <a class="dropdown-toggle"
                                    data-toggle="dropdown"
@@ -60,25 +62,21 @@
                                 <ul class="dropdown-menu">
                                     @if (User.Identity.IsAuthenticated)
                                     {
-                                                <li>@Html.ActionLink("Hi " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })</li>
-                                                <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+                                        <li>@Html.ActionLink("Hi " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })</li>
+                                        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
                                     }
                                     else
                                     {
                                         <li><a href="javascript:document.getElementById('logoutForm').submit()">Log In</a></li>
+                                        <li>@Html.ActionLink("Register", "Register", "Account")</li>
                                     }
-
                                 </ul>
-                                        </li>
-                                        <li>
-                                            @*Add contact page here & Make New Button for Register*@
-                                            <a href="about.html">About</a>
-                                        </li>
-                                        <li>
-                                            @*Add Login here*@
-                                            <a href="credits.html">Credits</a>
-                                        </li>
-                                    </ul>
+                            </li>
+                            @*<li>
+                    Add contact page here & Make New Button for Register
+                    <a href="about.html">About</a>
+                </li>*@
+                        </ul>
                     </div>
                 </nav>
             </div>
@@ -92,11 +90,11 @@
                     }
                 </div>
                 <div class="tales-searchbox">
-                    <form action="#" method="get" accept-charset="utf-8">
-                        <button class="searchbutton" type="submit">
+                    <form method="get" accept-charset="utf-8">
+                        <button class="searchbutton" id ="searchbox" type="submit">
                             <i class="fa fa-search"></i>
                         </button>
-                        <input class="searchfield" id="searchbox" type="text" placeholder="Search">
+                        <input class="input-block-level" name="searchbox" id="searchbox" type="text" placeholder="Search">
                     </form>
                 </div>
             </div>
@@ -109,20 +107,20 @@
 
                     <div class="aside-widget">
                         <header>
-                            <h3>Read next...</h3>
+                            <h3>New Blogs In Progress...</h3>
                         </header>
                         <div class="body">
                             <ul class="tales-list">
-                                <li><a href="index.html">Email Encryption Explained</a></li>
-                                <li><a href="#">Selling is a Function of Design.</a></li>
-                                <li><a href="#">It’s Hard To Come Up With Dummy Titles</a></li>
-                                <li><a href="#">Why the Internet is Full of Cats</a></li>
-                                <li><a href="#">Last Made-Up Headline, I Swear!</a></li>
+                                <li>Receipe for Disaster</a></li>
+                                <li>Should've Stayed Home</a></li>
+                                <li>Gone Fishin</a></li>
+                                <li>Still Fishin</a></li>
+                                <li>Send Help Soon</a></li>
                             </ul>
                         </div>
                     </div>
 
-                    <div class="aside-widget">
+                    @*<div class="aside-widget">
                         <header>
                             <h3>Authors Favorites</h3>
                         </header>
@@ -152,7 +150,7 @@
                                 <li><a href="#">Debian</a></li>
                             </ul>
                         </div>
-                    </div>
+                    </div>*@
                 </aside>
             </div>
         </div>
@@ -164,7 +162,7 @@
         <div class="widewrapper footer">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4 footer-widget">
+                    @*<div class="col-md-4 footer-widget">
                         <h3> <i class="fa fa-wpforms"></i>Statistics</h3>
                         <span>Even we sometimes loose track of how many articles we actually have here.  This one helps:</span>
                         <div class="stats">
@@ -191,13 +189,22 @@
                             <li><a href="#">Why the Internet is Full of Cats</a></li>
                             <li><a href="#">Last Made-Up Headline, I Swear!</a></li>
                         </ul>
-                    </div>
+                    </div>*@
                     <div class="col-md-4 footer-widget">
                         <h3> <i class="fa fa-envelope"></i>Contact Me</h3>
                         <span>I'm happy to hear from my readers. Thoughts, feedback, critique - all welcome! Drop me a line:</span>
 
                         <span class="email">
-                            <a href="#">jimmy@notanactualemail.com</a>, PGP key 0x5AK0BEA1
+                            <div>
+                                @if(User.Identity.IsAuthenticated)
+                                {
+                                    @Html.ActionLink("Message the Author", "Contact", "Home")
+                                }
+                                else
+                                {
+                                    <div>Login to contact the author</div>
+                                }
+                            </div>
                         </span>
                     </div>
                 </div>
