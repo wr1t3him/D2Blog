@@ -64,6 +64,12 @@ namespace D2Blog.Models
 
     public class RegisterViewModel
     {
+        [Display(Name = "First Name")]
+        public string Firstname { get; set; }
+
+        [Display(Name = "Last Name")]
+        public string Lastname { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

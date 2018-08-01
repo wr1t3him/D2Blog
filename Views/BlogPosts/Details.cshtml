@@ -54,30 +54,47 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.published)
+            @Html.DisplayNameFor(model => model.Comments)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.published)
+            <div class="col-md-3">
+                <div class="panel-group">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#collapse">Comments:</a>
+                            </h4>
+                        </div>
+                        <div id="collapse" class="panel-collapse collapse">
+                            @foreach (var comments in Model.Comments.OrderByDescending(c => c.created))
+                            {
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            Author: @comments.Author.Email
+                                            <br />
+                                            Posted on: @comments.created
+                                        </div>
+                                        <div class="col-md-8">
+                                            @Html.Raw(comments.Body)
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
         </dd>
-        
     </dl>
 </div>
-<div>
-    @using (Html.BeginForm("Create", "Comments"))
-    {
-        @Html.AntiForgeryToken()
-        <input type="text" class="col-md-3" id="comments" />
-        <input type="submit" value="Enter" />
-    }
-</div>
-<div>
-    @Html.ActionLink("Comment", "Index", "Comments")
-</div>
 <p>
+    @Html.ActionLink("Add Comment", "Create", "Comments", new { Slug = Model.Slug }, null) |
     @if ((User.Identity.IsAuthenticated) && (User.IsInRole("Admin") || (User.IsInRole("Moderator"))))
     {
-        @Html.ActionLink("Edit", "Edit", new { Slug = Model.Slug })
+        @Html.ActionLink("Edit", "Edit", new { Slug = Model.Slug }) 
     }
     @Html.ActionLink("Back to List", "Index")
 </p>

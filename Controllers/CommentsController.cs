@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using D2Blog.Models;
+using Microsoft.AspNet.Identity;
 
 namespace D2Blog.Controllers
 {
@@ -41,10 +42,14 @@ namespace D2Blog.Controllers
 
         // GET: Comments/Create
         [RequireHttps]
-        public ActionResult Create()
+        [Authorize]
+        public ActionResult Create(string slug)
         {
-            ViewBag.AuthorId = new SelectList(db.Users, "Id", "Firstname");
-            ViewBag.PostId = new SelectList(db.Posts, "id", "Title");
+            var user = User.Identity.GetUserId();
+            var person = db.Users.Find(user);
+
+            ViewBag.AuthorId = person;
+            ViewBag.PostId = new SelectList(db.Posts.Where(t => t.Slug == slug), "id", "Title");
             return View();
         }
 
@@ -58,6 +63,7 @@ namespace D2Blog.Controllers
         {
             if (ModelState.IsValid)
             {
+                comment.AuthorId = User.Identity.GetUserId();
                 db.Comments.Add(comment);
                 comment.created = DateTimeOffset.Now;
                 db.SaveChanges();

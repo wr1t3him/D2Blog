@@ -152,7 +152,9 @@ namespace D2Blog.Controllers
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser
-                {                    
+                {  
+                    Firstname = model.Firstname,
+                    Lastname = model.Lastname,
                     UserName = model.Email,
                     Email = model.Email
                 };

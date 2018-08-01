@@ -10,6 +10,7 @@ using D2Blog.Models;
 
 namespace D2Blog.Controllers
 {
+
     [Authorize]
     public class ManageController : Controller
     {
@@ -73,6 +74,30 @@ namespace D2Blog.Controllers
                 BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
             };
             return View(model);
+        }
+
+        // GET: User/Edit/5
+        [Authorize]
+        public ActionResult Edit()
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+
+            var userId = User.Identity.GetUserId();
+            var person = db.Users.Find(userId);
+            if (userId == null)
+            {
+                return HttpNotFound();
+            }
+
+            var currentFname = person.Firstname;
+            var currentLname = person.Lastname;
+            var currentEmail = person.Email;
+
+            ViewBag.Firstname = new SelectList(currentFname, "Id", "Firstname");
+            ViewBag.Lastname = new SelectList(currentLname, "Id", "Lastname");      
+            ViewBag.Email = new SelectList(currentEmail, "Id", "Email");
+
+            return ViewBag;
         }
 
         //
