@@ -1,4 +1,7 @@
 *.config
 Identityconfig
+HomeController
 obj/Release/Package/PackageTmp/private.config
 *.config
+Controllers/HomeController.cs
+*.cs

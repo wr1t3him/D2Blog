@@ -18,6 +18,7 @@ namespace D2Blog.Controllers
 
         // GET: Comments
         [RequireHttps]
+        [Authorize]
         public ActionResult Index()
         {
             var comments = db.Comments.Include(c => c.Author).Include(c => c.Post);
@@ -26,6 +27,7 @@ namespace D2Blog.Controllers
 
         // GET: Comments/Details/5
         [RequireHttps]
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -67,7 +69,7 @@ namespace D2Blog.Controllers
                 db.Comments.Add(comment);
                 comment.created = DateTimeOffset.Now;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "BlogPosts");
             }
 
             ViewBag.AuthorId = new SelectList(db.Users, "Id", "Firstname", comment.AuthorId);
@@ -77,6 +79,7 @@ namespace D2Blog.Controllers
 
         // GET: Comments/Edit/5
         [RequireHttps]
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -114,6 +117,7 @@ namespace D2Blog.Controllers
 
         // GET: Comments/Delete/5
         [RequireHttps]
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)

@@ -230,21 +230,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="obj\Release\Package\PackageTmp\Tales_template\HTML\node_modules\font-awesome\css\font-awesome.css" />
-    <Content Include="obj\Release\Package\PackageTmp\Tales_template\HTML\node_modules\font-awesome\css\font-awesome.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\Tales_template\HTML\node_modules\font-awesome\fonts\4.4.0\index.html" />
-    <Content Include="obj\Release\Package\PackageTmp\Tales_template\HTML\node_modules\font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="obj\Release\Package\PackageTmp\Tales_template\HTML\node_modules\font-awesome\fonts\fontawesome-webfont.eot" />
-    <Content Include="obj\Release\Package\PackageTmp\Tales_template\HTML\node_modules\font-awesome\fonts\fontawesome-webfont.ttf" />
-    <Content Include="obj\Release\Package\PackageTmp\Tales_template\HTML\node_modules\font-awesome\fonts\fontawesome-webfont.woff" />
-    <Content Include="obj\Release\Package\PackageTmp\Tales_template\HTML\node_modules\font-awesome\fonts\fontawesome-webfont.woff2" />
-    <Content Include="obj\Release\Package\PackageTmp\Tales_template\HTML\node_modules\font-awesome\fonts\FontAwesome.otf" />
-    <Content Include="obj\Release\Package\PackageTmp\Tales_template\HTML\node_modules\font-awesome\css\font-awesome.css.map" />
     <None Include="Properties\PublishProfiles\WiltenHblog - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />

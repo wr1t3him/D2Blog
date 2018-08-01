@@ -44,13 +44,14 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.mediaURL)
+            @Html.DisplayName("Cover Picture")
         </dt>
 
         <dd>
             @if (Model.mediaURL != null)
             {
-                <img class="img-responsive" src="@Model.mediaURL" alt="" height="184" width="184">}
+                <img class="img-responsive" src="@Model.mediaURL" alt="" height="184" width="184">
+            }
         </dd>
 
         <dt>
@@ -91,7 +92,10 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Add Comment", "Create", "Comments", new { Slug = Model.Slug }, null) |
+    @if(User.Identity.IsAuthenticated)
+    {
+        @Html.ActionLink("Add Comment", "Create", "Comments", new { Slug = Model.Slug }, null)
+    }    
     @if ((User.Identity.IsAuthenticated) && (User.IsInRole("Admin") || (User.IsInRole("Moderator"))))
     {
         @Html.ActionLink("Edit", "Edit", new { Slug = Model.Slug }) 

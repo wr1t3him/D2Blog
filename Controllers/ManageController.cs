@@ -76,7 +76,7 @@ namespace D2Blog.Controllers
             return View(model);
         }
 
-        // GET: User/Edit/5
+        // GET: Manage/Edit
         [Authorize]
         public ActionResult Edit()
         {

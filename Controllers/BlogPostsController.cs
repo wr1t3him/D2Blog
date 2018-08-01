@@ -119,6 +119,7 @@ namespace D2Blog.Controllers
             return View(blogPost);
         }
         [RequireHttps]
+        [Authorize(Roles = "Admin")]
         // GET: BlogPosts/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -147,21 +148,25 @@ namespace D2Blog.Controllers
 
             if (ModelState.IsValid)
             {
+                if (ImageUploadValidator.IsWebFriendlyImage(image) && image != null)
+                {
+                    var fileName = Path.GetFileName(image.FileName);
+                    image.SaveAs(Path.Combine(Server.MapPath("~/Uploads/"), fileName));
+                    blogPost.mediaURL = "/Uploads/" + fileName;
+                }    
+                blogPost.Updated = DateTimeOffset.Now;
                 db.Entry(blogPost).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            if (ImageUploadValidator.IsWebFriendlyImage(image))
-            {
-                var fileName = Path.GetFileName(image.FileName);
-                image.SaveAs(Path.Combine(Server.MapPath("~/Uploads/"), fileName));
-                blogPost.mediaURL = "/Uploads/" + fileName;
-            }
+
+                 
             return View(blogPost);
         }
 
         // GET: BlogPosts/Delete/5
         [RequireHttps]
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
