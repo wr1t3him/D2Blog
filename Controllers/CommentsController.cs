@@ -61,10 +61,11 @@ namespace D2Blog.Controllers
         [RequireHttps]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,PostId,AuthorId,Body")] Comment comment)
+        public ActionResult Create([Bind(Include = "id,created,updated,PostId,AuthorId,Body")] Comment comment)
         {
             if (ModelState.IsValid)
             {
+                comment.updated = DateTimeOffset.Now;
                 comment.AuthorId = User.Identity.GetUserId();
                 db.Comments.Add(comment);
                 comment.created = DateTimeOffset.Now;
@@ -86,13 +87,19 @@ namespace D2Blog.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+            var user = User.Identity.GetUserId();
             Comment comment = db.Comments.Find(id);
+            if(comment.AuthorId != user)
+            {
+                return RedirectToAction("Index", "BlogPosts");
+            }
             if (comment == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.AuthorId = new SelectList(db.Users, "Id", "Firstname", comment.AuthorId);
-            ViewBag.PostId = new SelectList(db.Posts, "id", "Title", comment.PostId);
+            var person = db.Users.Find(user);
+            ViewBag.AuthorId = person.Id;
+            ViewBag.PostId = new SelectList(db.Posts.Where(c => c.id == comment.id), "id", "Title", comment.PostId);
             return View(comment);
         }
 
@@ -106,11 +113,12 @@ namespace D2Blog.Controllers
         {
             if (ModelState.IsValid)
             {
+                comment.AuthorId = User.Identity.GetUserId();
                 db.Entry(comment).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.AuthorId = new SelectList(db.Users, "Id", "Firstname", comment.AuthorId);
+            
             ViewBag.PostId = new SelectList(db.Posts, "id", "Title", comment.PostId);
             return View(comment);
         }

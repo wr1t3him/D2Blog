@@ -8,11 +8,11 @@
 
 /* General Content styles such as links, body text, or headings */
 body {
-  font-size: 16px;
-  line-height: 27px;
-  font-family: 'Open Sans', sans-serif;
-  color: #404b55;
-  background-color: #feffff;
+    font-size: 16px;
+    line-height: 27px;
+    font-family: 'Open Sans', sans-serif;
+    color: #15a5de;
+    background-color: #feffff;
 }
 a {
   color: #5b6268;
