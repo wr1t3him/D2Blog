@@ -1,0 +1,23 @@
+﻿#heading {
+    padding-left: 0px;
+    width: 183px;
+    padding-top: 5px;
+}
+
+.widewrapper.footer {
+    background-color: white;
+    color: black
+}
+
+.dark {
+    color: black
+}
+
+.index {
+    background-color: #242b32;
+    color: #15a5de;
+}
+
+.text {
+    background-color: #242b32;
+}

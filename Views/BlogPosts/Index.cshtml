@@ -3,96 +3,98 @@
 
 @model IPagedList<D2Blog.Models.BlogPost>
 
-@if (User.IsInRole("Admin"))
-{
-    <div class="col-md-8 blog-main">
-        <div class="row">
-            @foreach (var item in Model)
-            {
+<body>
+    @if (User.IsInRole("Admin"))
+    {
+        <div class="col-md-8 blog-main">
+            <div class="row">
+                @foreach (var item in Model)
+                {
 
-                <div class="col-md-6 col-sm-6">
-                    <article class=" blog-teaser">
-                        <header>
-                            <img src="@item.mediaURL" width="184" height="184" />
-                            <h3><a href="blog-detail.html">@item.Title</a></h3>
-                            <span class="meta">@item.Created.ToString("dd MMM yyyy") , Wilten Houston</span>
-                            <hr>
-                        </header>
-                        <div class="body">
-                            @Html.Raw(item.Body)
-                        </div>
-                        <div class="clearfix">
+                    <div class="col-md-6 col-sm-6">
+                        <article class=" blog-teaser index">
+                            <header>
+                                <img src="@item.mediaURL" width="184" height="184" />
+                                <h3><a href="blog-detail.html">@item.Title</a></h3>
+                                <span class="meta">@item.Created.ToString("dd MMM yyyy") , Wilten Houston</span>
+                                <hr>
+                            </header>
+                            <div class="body">
+                                @Html.Raw(item.Body)
+                            </div>
+                            <div class="clearfix">
 
-                            @Html.ActionLink("Read More", "Details", new { Slug = item.Slug }, new { @class = "btn btn-tales-one" })
-                            @if ((User.Identity.IsAuthenticated) && (User.IsInRole("Admin")))
-                            {
-                                @Html.ActionLink("Edit", "Edit", new { id = item.id }, new { @class = "btn btn-tales-one" })
+                                @Html.ActionLink("Read More", "Details", new { Slug = item.Slug }, new { @class = "btn btn-tales-one" })
+                                @if ((User.Identity.IsAuthenticated) && (User.IsInRole("Admin")))
+                                {
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.id }, new { @class = "btn btn-tales-one" })
 
-                                @Html.ActionLink("Delete", "Delete", new { id = item.id }, new { @class = "btn btn-tales-one" })
-                            }
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.id }, new { @class = "btn btn-tales-one" })
+                                }
 
-                        </div>
-                    </article>
-                </div>
-            }
-            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
-            of @Model.PageCount @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+                            </div>
+                        </article>
+                    </div>
+                }
+                Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+                of @Model.PageCount @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
 
-        </div>
-    </div>
-}
-else
-{
-    <div class="col-md-8 blog-main">
-        <div class="row">
-            @foreach (var item in Model.Where(p => p.published == true))
-            {
-
-                <div class="col-md-6 col-sm-6">
-                    <article class=" blog-teaser">
-                        <header>
-                            <img src="@item.mediaURL" width="184" height="184" />
-                            <h3><a href="blog-detail.html">@item.Title</a></h3>
-                            <span class="meta">@item.Created.ToString("dd MMM yyyy") , Wilten Houston</span>
-                            <hr>
-                        </header>
-                        <div class="body">
-                            @Html.Raw(item.Body)
-                        </div>
-                        <div class="clearfix">
-
-                            @Html.ActionLink("Read More", "Details", new { Slug = item.Slug }, new { @class = "btn btn-tales-one" })
-                            @if ((User.Identity.IsAuthenticated) && (User.IsInRole("Admin")))
-                            {
-                                @Html.ActionLink("Edit", "Edit", new { id = item.id }, new { @class = "btn btn-tales-one" })
-
-                                @Html.ActionLink("Delete", "Delete", new { id = item.id }, new { @class = "btn btn-tales-one" })
-                            }
-
-                        </div>
-                    </article>
-                </div>
-            }
-            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
-            of @Model.PageCount @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
-
-        </div>
-    </div>
-    <aside class="col-md-4 blog-aside">
-
-        <div class="aside-widget">
-            <header>
-                <h3>New Blogs In Progress...</h3>
-            </header>
-            <div class="body">
-                <ul class="tales-list">
-                    @foreach (var item in Model.Where(p => p.published == false))
-                    {
-                        <li>@item.Title</li>
-                    }
-
-                </ul>
             </div>
         </div>
-    </aside>
-}
+    }
+    else
+    {
+        <div class="col-md-8 blog-main">
+            <div class="row">
+                @foreach (var item in Model.Where(p => p.published == true))
+                {
+
+                    <div class="col-md-6 col-sm-6">
+                        <article class=" blog-teaser index">
+                            <header>
+                                <img src="@item.mediaURL" width="184" height="184" />
+                                <h3><a href="blog-detail.html">@item.Title</a></h3>
+                                <span class="meta">@item.Created.ToString("dd MMM yyyy") , Wilten Houston</span>
+                                <hr>
+                            </header>
+                            <div class="body">
+                                @Html.Raw(item.Body)
+                            </div>
+                            <div class="clearfix">
+
+                                @Html.ActionLink("Read More", "Details", new { Slug = item.Slug }, new { @class = "btn btn-tales-one" })
+                                @if ((User.Identity.IsAuthenticated) && (User.IsInRole("Admin")))
+                                {
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.id }, new { @class = "btn btn-tales-one" })
+
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.id }, new { @class = "btn btn-tales-one" })
+                                }
+
+                            </div>
+                        </article>
+                    </div>
+                }
+                Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+                of @Model.PageCount @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+
+            </div>
+        </div>
+        <aside class="col-md-4 blog-aside">
+
+            <div class="aside-widget">
+                <header>
+                    <h3 class="text">New Blogs In Progress...</h3>
+                </header>
+                <div class="body text">
+                    <ul class="tales-list">
+                        @foreach (var item in Model.Where(p => p.published == false))
+                        {
+                            <li>@item.Title</li>
+                        }
+
+                    </ul>
+                </div>
+            </div>
+        </aside>
+    }
+</body>

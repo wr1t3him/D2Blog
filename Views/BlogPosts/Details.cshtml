@@ -59,25 +59,25 @@
         </dt>
 
         <dd>
-            <div class="col-md-3">
+            <div id="heading" class="col-md-10">
                 <div class="panel-group">
-                    <div class="panel panel-primary">
+                    <div  class="panel panel-primary">
                         <div class="panel-heading">
                             <h4 class="panel-title">
                                 <a data-toggle="collapse" href="#collapse">Comments:</a>
                             </h4>
                         </div>
-                        <div id="collapse" class="panel-collapse collapse">
+                        <div id="collapse" class="panel-collapse collapse nopad">
                             @foreach (var comments in Model.Comments.OrderByDescending(c => c.created))
                             {
                                 <div class="panel-body">
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-6">
                                             Author: @comments.Author.Email
                                             <br />
                                             Posted on: @comments.created
                                         </div>
-                                        <div class="col-md-8">
+                                        <div class="col-md-6">
                                             @Html.Raw(comments.Body)
                                         </div>
                                     </div>

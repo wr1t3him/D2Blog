@@ -363,8 +363,8 @@ C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\Microsoft.AI.DependencyCo
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\Microsoft.AI.Web.xml
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\obj\Debug\D2Blog.csprojAssemblyReference.cache
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\obj\Debug\D2Blog.csproj.CoreCompileInputs.cache
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\obj\Debug\D2Blog.csproj.CopyComplete
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\obj\Debug\D2Blog.dll
 C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\obj\Debug\D2Blog.pdb
+C:\Users\wr1t3\Desktop\Coder Foundry\D2Blog\D2Blog\obj\Debug\D2Blog.csprojAssemblyReference.cache

@@ -5,3 +5,6 @@ obj/Release/Package/PackageTmp/private.config
 *.config
 Controllers/HomeController.cs
 *.cs
+Controllers/HomeController.cs
+*.cs
+Controllers/HomeController.cs
