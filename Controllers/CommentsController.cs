@@ -89,7 +89,7 @@ namespace D2Blog.Controllers
             }
             var user = User.Identity.GetUserId();
             Comment comment = db.Comments.Find(id);
-            if(comment.AuthorId != user)
+            if(comment.AuthorId != user && !User.IsInRole("Moderator"))
             {
                 return RedirectToAction("Index", "BlogPosts");
             }

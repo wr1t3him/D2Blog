@@ -79,7 +79,10 @@ namespace D2Blog.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToAction(returnUrl);
+                    if(returnUrl == null)                   
+                        return RedirectToAction("Index", "BlogPosts");
+                    return RedirectToLocal(returnUrl);
+
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
