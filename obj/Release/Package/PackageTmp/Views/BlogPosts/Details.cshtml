@@ -72,13 +72,16 @@
                             {
                                 <div class="panel-body">
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
+                                            @Html.Raw(comments.Body)
+                                        </div>
+                                        <div class="col-md-12">
                                             Author: @comments.Author.Email
                                             <br />
                                             Posted on: @comments.created
                                         </div>
-                                        <div class="col-md-6">
-                                            @Html.Raw(comments.Body)
+                                        <div class="col-md-12">
+                                            @Html.ActionLink("Edit", "Edit", "Comments", new { id = comments.id }, null)
                                         </div>
                                     </div>
                                 </div>

@@ -1,7 +1,10 @@
 ﻿#heading {
     padding-left: 0px;
-    width: 183px;
+    padding-right: 0px;
+    width: 200px;
+    word-break: break-all;
     padding-top: 5px;
+    line-height: 27px;
 }
 
 .widewrapper.footer {
@@ -14,6 +17,22 @@
 }
 
 .index {
-    background-color: #0c0909;
-    color: #15a5de;
+    background-color: #242b32;
+    
+}
+
+.blog-teaser .body{
+    color: white;
+}
+
+.blog-teaser header h3 {
+    color: white;
+}
+
+.blog-teaser header .meta {
+    color: white; 
+}
+
+.aside-widget header h3 {
+    color: white;
 }
